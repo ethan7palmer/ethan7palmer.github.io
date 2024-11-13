@@ -122,7 +122,7 @@ body {
 }
 
 .btn-box a:nth-child(2):hover {
-  color: #081b29;
+  color: #022b3a;
 }
 
 .btn-box a:nth-child(2)::before {
@@ -136,7 +136,7 @@ body {
   left: 0;
   width: 0;
   height: 100%;
-  background: #081b29;
+  background: #022b3a;
   z-index: -1;
   transition: 0.5s;
 }
@@ -190,3 +190,19 @@ body {
 .home-sci a:hover::before {
   width: 100%;
 }
+
+/* .home-imgHover {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  width: 500px;
+  height: 100%;
+  background: transparent;
+  border: 2px solid red;
+  transition: 3s;
+}
+
+.home-imgHover:hover {
+  background: #022b3a;
+  opacity: 0.8;
+} */
