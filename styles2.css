@@ -393,11 +393,11 @@ body {
   height: 10px;
   background-color: #f1683a;
   margin-block-end: 1vw;
-  z-index: 100;
+  position: relative;
+  z-index: 102;
 }
 
-.carousel.next .time,
-.carousel.prev .time {
+.time.running {
   width: 100%;
   animation: timeRunning 3s linear 1 forwards;
 }

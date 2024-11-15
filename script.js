@@ -59,6 +59,7 @@ let prevDom = document.getElementById("prev");
 let carouselDom = document.querySelector(".carousel");
 let listItemDom = document.querySelector(".carousel .list");
 let thumbnailDom = document.querySelector(".carousel .thumbnail");
+let timeBarDom = document.querySelector(".time");
 
 nextDom.onclick = function () {
   showSlider("next");
@@ -85,17 +86,20 @@ function showSlider(type) {
     listItemDom.appendChild(itemSlider[0]);
     thumbnailDom.appendChild(itemThumbnail[0]);
     carouselDom.classList.add("next");
+    timeBarDom.classList.add("running");
   } else {
     let positionLastItem = itemSlider.length - 1;
     listItemDom.prepend(itemSlider[positionLastItem]);
     thumbnailDom.prepend(itemThumbnail[positionLastItem]);
     carouselDom.classList.add("prev");
+    timeBarDom.classList.add("running");
   }
 
   clearTimeout(runTimeOut);
   runTimeOut = setTimeout(() => {
     carouselDom.classList.remove("next");
     carouselDom.classList.remove("prev");
+    timeBarDom.classList.remove("running");
   }, timeRunning);
 
   // // slider auto run
