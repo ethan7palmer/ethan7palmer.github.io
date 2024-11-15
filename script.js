@@ -64,7 +64,7 @@ nextDom.onclick = function () {
   showSlider("next");
 };
 
-prevDom.onclick = function () {
+prevDom.onclick = () => {
   showSlider("prev");
 };
 

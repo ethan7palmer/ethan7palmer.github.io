@@ -20,6 +20,8 @@ body {
   color: var(--text);
 }
 
+/* page header */
+
 .header {
   position: fixed;
   top: 0;
@@ -83,9 +85,12 @@ body {
   color: var(--accents);
 }
 
+/* ----------------------------------- */
+
+/* home page */
+
 .home {
   height: 100vh;
-  /* background: url("home.jpg") no-repeat; */
   background: var(--bg) no-repeat;
   background-size: cover;
   background-position: center;
@@ -93,6 +98,10 @@ body {
   align-items: center;
   padding: 0 10%;
 }
+
+/* ------------------------ */
+
+/* home page content */
 
 .home-content {
   max-width: 600px;
@@ -229,6 +238,10 @@ body {
   width: 100%;
 }
 
+/* ---------------------------- */
+
+/* home page socials */
+
 .home-socials {
   position: absolute;
   bottom: 70px;
@@ -288,11 +301,17 @@ body {
   width: 100%;
 }
 
+/* ------------------------------ */
+
+/* home page animations */
+
 @keyframes showRight {
   100% {
     width: 0;
   }
 }
+
+/* -------------------------- */
 
 /* spark effect */
 
