@@ -294,6 +294,8 @@ body {
   }
 }
 
+/* spark effect */
+
 .spark {
   position: absolute;
   width: 40px;
@@ -317,10 +319,10 @@ body {
   width: 100%;
   height: 100%;
   background: #0f0;
-  animation: animate 0.5s ease-in-out forwards;
+  animation: spark 0.5s ease-in-out forwards;
 }
 
-@keyframes animate {
+@keyframes spark {
   0% {
     transform: translateY(100%);
   }
@@ -328,6 +330,10 @@ body {
     transform: translateY(-100%);
   }
 }
+
+/* -------------------------------------------- */
+
+/* trail effect */
 
 .trail {
   width: 10px;
@@ -351,3 +357,5 @@ body {
     opacity: 0;
   }
 }
+
+/* --------------------------------------------- */

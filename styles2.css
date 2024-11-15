@@ -312,7 +312,7 @@ header a {
 
 .time {
   width: 0%;
-  height: 5px;
+  height: 10px;
   background-color: #f1683a;
   position: absolute;
   z-index: 100;
@@ -323,7 +323,7 @@ header a {
 .carousel.next .time,
 .carousel.prev .time {
   width: 100%;
-  animation: timeRunning 2s linear 1 forwards;
+  animation: timeRunning 3s linear 1 forwards;
 }
 
 @keyframes timeRunning {
