@@ -54,6 +54,22 @@ body {
   animation-delay: 0.4s;
 }
 
+.navbar {
+  position: relative;
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #022b3a;
+  animation: showRight 1s ease forwards;
+  animation-delay: 3.2s;
+}
+
 .navbar a {
   font-size: 18px;
   color: #e1e5f2;
@@ -214,7 +230,7 @@ body {
   width: 100%;
 }
 
-.home-sci {
+.home-socials {
   position: absolute;
   bottom: 40px;
   width: 170px;
@@ -222,7 +238,7 @@ body {
   justify-content: space-between;
 }
 
-.home-sci::before {
+.home-socials::before {
   content: "";
   position: absolute;
   top: 0;
@@ -235,7 +251,7 @@ body {
   z-index: 2;
 }
 
-.home-sci a {
+.home-socials a {
   position: relative;
   display: inline-flex;
   justify-content: center;
@@ -253,11 +269,11 @@ body {
   transition: 0.5s;
 }
 
-.home-sci a:hover {
+.home-socials a:hover {
   color: #022b3a;
 }
 
-.home-sci a::before {
+.home-socials a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -269,50 +285,13 @@ body {
   transition: 0.5s;
 }
 
-.home-sci a:hover::before {
+.home-socials a:hover::before {
   width: 100%;
-}
-
-.home-imgHover {
-  position: absolute;
-  top: 0;
-  right: 30px;
-  width: 500px;
-  height: 100%;
-  background: transparent;
-  transition: 3s;
-  animation: manipulateActiveHover 0.1s forwards;
-  animation-delay: 4s;
-  pointer-events: none;
-}
-
-.home-imgHover:hover {
-  background: #022b3a;
-  opacity: 0.8;
-}
-
-.home-imgHover::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 140%;
-  height: 100%;
-  background: #022b3a;
-  animation: showRight 1s ease forwards;
-  animation-delay: 3s;
-  z-index: 100;
 }
 
 @keyframes showRight {
   100% {
     width: 0;
-  }
-}
-
-@keyframes manipulateActiveHover {
-  100% {
-    pointer-events: auto;
   }
 }
 
