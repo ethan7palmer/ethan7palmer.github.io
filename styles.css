@@ -23,11 +23,11 @@ body {
 /* page header */
 
 .header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 10%;
+  padding: 30px 10%;
   background: transparent;
   display: flex;
   justify-content: space-between;
@@ -68,7 +68,7 @@ body {
   height: 100%;
   background: var(--bg);
   animation: showRight 1s ease forwards;
-  animation-delay: 3.2s;
+  animation-delay: 1s;
 }
 
 .navbar a {
@@ -85,18 +85,82 @@ body {
   color: var(--accents);
 }
 
+/* home page socials */
+
+.home-socials {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-socials::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  animation: showRight 1s ease forwards;
+  animation-delay: 2.2s;
+  z-index: 2;
+}
+
+.home-socials a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid var(--accents);
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--accents);
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.home-socials a:hover {
+  color: var(--bg);
+}
+
+.home-socials a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--accents);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.home-socials a:hover::before {
+  width: 100%;
+}
+
+/* ------------------------------ */
+
 /* ----------------------------------- */
 
 /* home page */
 
 .home {
-  height: 100vh;
+  height: 800px;
   background: var(--bg) no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   padding: 0 10%;
+  position: relative;
 }
 
 /* ------------------------ */
@@ -239,69 +303,6 @@ body {
 }
 
 /* ---------------------------- */
-
-/* home page socials */
-
-.home-socials {
-  position: absolute;
-  bottom: 70px;
-  width: 140px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.home-socials::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--bg);
-  animation: showRight 1s ease forwards;
-  animation-delay: 2.5s;
-  z-index: 2;
-}
-
-.home-socials a {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  background: transparent;
-  border: 2px solid var(--accents);
-  border-radius: 50%;
-  font-size: 20px;
-  color: var(--accents);
-  text-decoration: none;
-  z-index: 1;
-  overflow: hidden;
-  transition: 0.5s;
-}
-
-.home-socials a:hover {
-  color: var(--bg);
-}
-
-.home-socials a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: var(--accents);
-  z-index: -1;
-  transition: 0.5s;
-}
-
-.home-socials a:hover::before {
-  width: 100%;
-}
-
-/* ------------------------------ */
 
 /* home page animations */
 

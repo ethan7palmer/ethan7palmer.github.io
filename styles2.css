@@ -298,7 +298,7 @@ body {
   height: 220px;
   position: absolute;
   left: 50%;
-  bottom: 50px;
+  bottom: 25px;
   border-radius: 20px;
   animation: showImage 0.5s linear 1 forwards;
 }
@@ -354,7 +354,7 @@ body {
     height: 220px;
     border-radius: 20px;
     left: 50%;
-    bottom: 50px;
+    bottom: 25px;
   }
 }
 
