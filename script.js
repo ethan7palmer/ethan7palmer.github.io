@@ -1,112 +1,131 @@
-let body = document.querySelector("body");
+document.addEventListener("DOMContentLoaded", () => {
+  let body = document.querySelector("body");
 
-// spark/firework effect ------------------------------
-body.addEventListener("click", (e) => {
-  let spark = document.createElement("div");
-  spark.classList.add("spark");
-  body.appendChild(spark);
+  // spark/firework effect ------------------------------
+  body.addEventListener("click", (e) => {
+    let spark = document.createElement("div");
+    spark.classList.add("spark");
+    body.appendChild(spark);
 
-  spark.style.top = event.clientY - body.offsetTop + "px";
-  spark.style.left = event.clientX - body.offsetLeft + "px";
-  spark.style.filter = "hue-rotate(" + Math.random() * 360 + "deg)";
+    spark.style.top = event.clientY - body.offsetTop + "px";
+    spark.style.left = event.clientX - body.offsetLeft + "px";
+    spark.style.filter = "hue-rotate(" + Math.random() * 360 + "deg)";
 
-  for (let i = 0; i <= 7; i++) {
-    let span = document.createElement("span");
-    span.style.transform = "rotate(" + i * 45 + "deg)";
-    spark.appendChild(span);
-  }
+    for (let i = 0; i <= 7; i++) {
+      let span = document.createElement("span");
+      span.style.transform = "rotate(" + i * 45 + "deg)";
+      spark.appendChild(span);
+    }
 
-  setTimeout(function () {
-    spark.remove();
-  }, 1000);
-});
+    setTimeout(function () {
+      spark.remove();
+    }, 1000);
+  });
 
-// -------------------------------------------------------
+  // -------------------------------------------------------
 
-// trail effect ---------------------------------------
+  // trail effect ---------------------------------------
 
-// time since last added trail element
-let lastTrailTime = 0;
-// delay in milliseconds between trails
-const trailDelay = 20;
-document.addEventListener("mousemove", (e) => {
-  const currentTime = Date.now();
+  // time since last added trail element
+  let lastTrailTime = 0;
+  // delay in milliseconds between trails
+  const trailDelay = 20;
+  document.addEventListener("mousemove", (e) => {
+    const currentTime = Date.now();
 
-  if (currentTime - lastTrailTime > trailDelay) {
-    lastTrailTime = currentTime;
+    if (currentTime - lastTrailTime > trailDelay) {
+      lastTrailTime = currentTime;
 
-    let element = document.createElement("div");
-    element.setAttribute("class", "trail");
-    element.setAttribute(
-      "style",
-      `left: ${e.clientX - 5}px; top: ${e.clientY - 5}px;`
-    );
+      let element = document.createElement("div");
+      element.setAttribute("class", "trail");
+      element.setAttribute(
+        "style",
+        `left: ${e.clientX - 5}px; top: ${e.clientY - 5}px;`
+      );
 
-    element.onanimationend = () => {
-      element.remove();
-    };
+      element.onanimationend = () => {
+        element.remove();
+      };
 
-    body.insertAdjacentElement("beforeend", element);
-  }
-});
+      body.insertAdjacentElement("beforeend", element);
+    }
+  });
 
-// -------------------------------------------------------
+  // -------------------------------------------------------
 
-// project slider ------------------------------------
+  // project slider ------------------------------------
 
-let nextDom = document.getElementById("next");
-let prevDom = document.getElementById("prev");
-let carouselDom = document.querySelector(".carousel");
-let listItemDom = document.querySelector(".carousel .list");
-let thumbnailDom = document.querySelector(".carousel .thumbnail");
-let timeBarDom = document.querySelector(".time");
+  // let nextDom = document.getElementById("next");
+  // let prevDom = document.getElementById("prev");
+  // let carouselDom = document.querySelector(".carousel");
+  // let listItemDom = document.querySelector(".carousel .list");
+  // let thumbnailDom = document.querySelector(".carousel .thumbnail");
+  // let timeBarDom = document.querySelector(".time");
 
-nextDom.onclick = function () {
-  showSlider("next");
-};
+  // nextDom.addEventListener("click", () => {
+  //   showSlider("next");
+  // });
 
-prevDom.onclick = () => {
-  showSlider("prev");
-};
+  // prevDom.addEventListener("click", () => {
+  //   showSlider("prev");
+  // });
 
-let timeRunning = 3000;
-let runTimeOut;
-
-// slider auto run
-// let timeAutoNext = 7000;
-// let runAutoRun = setTimeout(() => {
-//   nextDom.click();
-// }, timeAutoNext);
-
-function showSlider(type) {
-  let itemSlider = document.querySelectorAll(".carousel .list .item");
-  let itemThumbnail = document.querySelectorAll(".carousel .thumbnail .item");
-
-  if (type === "next") {
-    listItemDom.appendChild(itemSlider[0]);
-    thumbnailDom.appendChild(itemThumbnail[0]);
-    carouselDom.classList.add("next");
-    timeBarDom.classList.add("running");
-  } else {
-    let positionLastItem = itemSlider.length - 1;
-    listItemDom.prepend(itemSlider[positionLastItem]);
-    thumbnailDom.prepend(itemThumbnail[positionLastItem]);
-    carouselDom.classList.add("prev");
-    timeBarDom.classList.add("running");
-  }
-
-  clearTimeout(runTimeOut);
-  runTimeOut = setTimeout(() => {
-    carouselDom.classList.remove("next");
-    carouselDom.classList.remove("prev");
-    timeBarDom.classList.remove("running");
-  }, timeRunning);
+  // let timeRunning = 3000;
+  // let runTimeOut;
 
   // // slider auto run
-  // clearTimeout(runAutoRun);
-  // runAutoRun = setTimeout(() => {
-  //   nextDom.click();
-  // }, timeAutoNext);
-}
+  // // let timeAutoNext = 7000;
+  // // let runAutoRun = setTimeout(() => {
+  // //   nextDom.click();
+  // // }, timeAutoNext);
 
-// -------------------------------------------------------
+  // function showSlider(type) {
+  //   let itemSlider = document.querySelectorAll(".carousel .list .item");
+  //   let itemThumbnail = document.querySelectorAll(".carousel .thumbnail .item");
+
+  //   if (type === "next") {
+  //     listItemDom.appendChild(itemSlider[0]);
+  //     thumbnailDom.appendChild(itemThumbnail[0]);
+  //     carouselDom.classList.add("next");
+  //     timeBarDom.classList.add("running");
+  //   } else {
+  //     let positionLastItem = itemSlider.length - 1;
+  //     listItemDom.prepend(itemSlider[positionLastItem]);
+  //     thumbnailDom.prepend(itemThumbnail[positionLastItem]);
+  //     carouselDom.classList.add("prev");
+  //     timeBarDom.classList.add("running");
+  //   }
+
+  //   clearTimeout(runTimeOut);
+  //   runTimeOut = setTimeout(() => {
+  //     carouselDom.classList.remove("next");
+  //     carouselDom.classList.remove("prev");
+  //     timeBarDom.classList.remove("running");
+  //   }, timeRunning);
+
+  //   // // slider auto run
+  //   // clearTimeout(runAutoRun);
+  //   // runAutoRun = setTimeout(() => {
+  //   //   nextDom.click();
+  //   // }, timeAutoNext);
+  // }
+
+  // -------------------------------------------------------
+
+  // Select all nav links
+  const navLinks = document.querySelectorAll(".navbar a");
+
+  // Function to handle changing the active class
+  function changeActive(event) {
+    // Remove the 'active' class from all links
+    navLinks.forEach((link) => link.classList.remove("active"));
+
+    // Add the 'active' class to the clicked link
+    event.target.classList.add("active");
+  }
+
+  // Add event listeners to each link
+  navLinks.forEach((link) => {
+    link.addEventListener("click", changeActive);
+  });
+});
